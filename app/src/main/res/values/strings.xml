@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pricepally Android Task</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="calendar">Calendar</string>
+    <string name="notification">Notification</string>
+    <string name="milongas">Milongas</string>
+    <string name="teachers">Teachers</string>
+    <string name="schools">Schools</string>
+</resources>
