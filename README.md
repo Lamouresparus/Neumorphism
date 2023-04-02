@@ -1,4 +1,4 @@
-# PricepallyAndroidTask
+# Pricepally Android Task
 
 This repository contains a sample Android project's UI using Jetpack Compose.
 Jetpack Compose is a declarative modern toolkit for building native Android UIs
