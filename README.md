@@ -3,6 +3,12 @@
 This repository contains a sample Android project's UI using Jetpack Compose.
 Jetpack Compose is a declarative modern toolkit for building native Android UIs
 
+# Features
+This sample app demonstrates the following features:
+
+- Implementation of various UI components such as text, images, lists, and custom views, using Jetpack Compose.
+- Bottom navigation bar for navigation between screens using the Navigation component.
+
 # Screenshots
 <img src="https://user-images.githubusercontent.com/34775925/229384288-f6225d69-cefe-4ae4-9ace-0e8bcec0c989.png" width="320" height="640xd"> <img src="https://user-images.githubusercontent.com/34775925/229384740-7449022b-bfac-4f8a-9bef-f5dba212ff21.png" width="320" height="640xd">
 
