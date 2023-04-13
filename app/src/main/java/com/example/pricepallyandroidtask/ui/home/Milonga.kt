@@ -1,6 +1,7 @@
 package com.example.pricepallyandroidtask.ui.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
@@ -21,6 +22,10 @@ import androidx.compose.ui.unit.sp
 import com.example.pricepallyandroidtask.R
 import com.example.pricepallyandroidtask.ui.Colors
 import com.example.pricepallyandroidtask.ui.home.data.Milonga
+import com.gandiva.neumorphic.LightSource
+import com.gandiva.neumorphic.neu
+import com.gandiva.neumorphic.shape.Flat
+import com.gandiva.neumorphic.shape.RoundedCorner
 
 @Composable
 fun Milongas(
@@ -30,13 +35,22 @@ fun Milongas(
 
     Box(
         modifier = Modifier
-            .wrapContentSize(),
+            .wrapContentSize()
+            .padding(start = 8.dp)
+            .neu(
+                lightShadowColor = Color(Colors.lightShadow),
+                darkShadowColor = Color.Black,
+                shadowElevation = 6.dp,
+                lightSource = LightSource.LEFT_TOP,
+                shape = Flat(RoundedCorner(8.dp)),
+            ),
         contentAlignment = Alignment.Center
     ) {
-        ShadowedShape(shape = RoundedCornerShape(10.dp), width = 278, height = 120)
 
         Row(
             Modifier
+                .clip(RoundedCornerShape(8.dp))
+                .background(Color(Colors.Mirage))
                 .wrapContentSize()
                 .padding(10.dp)
 
@@ -87,7 +101,9 @@ fun Milongas(
                     Icon(
                         painter = painterResource(id = R.drawable.ic_near_me),
                         contentDescription = "near me",
-                        modifier = Modifier.size(11.dp).align(Alignment.CenterVertically),
+                        modifier = Modifier
+                            .size(11.dp)
+                            .align(Alignment.CenterVertically),
                         tint = Color(Colors.Ash)
                     )
 

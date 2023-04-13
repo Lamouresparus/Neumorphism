@@ -1,7 +1,7 @@
 package com.example.pricepallyandroidtask.ui
 
 class Colors {
-    companion object{
+    companion object {
         const val Grey = 0xFF7D7985
         const val DragonGreen = 0xFF69FF97
         const val NeonBlue = 0xFF00E4FF
@@ -11,6 +11,7 @@ class Colors {
         const val Ash = 0xFFA2A2A2
         const val SmokeyGray = 0xFFA2A2A2
         const val GreenWhite = 0xFFEAEAEA
+        const val lightShadow = 0x99342b47
     }
 
 }

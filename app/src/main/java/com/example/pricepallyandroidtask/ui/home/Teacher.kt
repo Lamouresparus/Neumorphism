@@ -1,6 +1,7 @@
 package com.example.pricepallyandroidtask.ui.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,6 +22,10 @@ import androidx.compose.ui.unit.sp
 import com.example.pricepallyandroidtask.R
 import com.example.pricepallyandroidtask.ui.Colors
 import com.example.pricepallyandroidtask.ui.home.data.Teacher
+import com.gandiva.neumorphic.LightSource
+import com.gandiva.neumorphic.neu
+import com.gandiva.neumorphic.shape.Flat
+import com.gandiva.neumorphic.shape.RoundedCorner
 
 @Composable
 fun Teachers(
@@ -33,14 +38,26 @@ fun Teachers(
         contentAlignment = Alignment.TopCenter
     ) {
 
-            ShadowedShape(
-                shape = RoundedCornerShape(10.dp),
-                width = 168,
-                height = 168,
-                modifier = Modifier.padding(top = 50.dp)
-            )
+        Box(
+            modifier = Modifier
+                .padding(start = 8.dp, top = 50.dp)
+                .neu(
+                    lightShadowColor = Color(Colors.lightShadow),
+                    darkShadowColor = Color.Black,
+                    shadowElevation = 6.dp,
+                    lightSource = LightSource.LEFT_TOP,
+                    shape = Flat(RoundedCorner(10.dp)),
+                )
+        ) {
 
-            Column(modifier = Modifier.padding(top = 108.dp, start = 10.dp, end = 10.dp)) {
+            Column(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(10.dp))
+                    .background(Color(Colors.Mirage))
+                    .padding(start = 10.dp, end = 10.dp)
+            ) {
+
+                Spacer(modifier = Modifier.height(58.dp))
                 Text(text = item.name, style = MaterialTheme.typography.subtitle1)
 
                 Spacer(modifier = Modifier.height(6.dp))
@@ -67,7 +84,10 @@ fun Teachers(
                     )
                 }
                 Row {
-                    Text(text = item.yearsOfExperience, style = MaterialTheme.typography.subtitle2)
+                    Text(
+                        text = item.yearsOfExperience,
+                        style = MaterialTheme.typography.subtitle2
+                    )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = "of experience",
@@ -89,7 +109,10 @@ fun Teachers(
 
                     Spacer(modifier = Modifier.width(8.dp))
 
-                    Text(text = "${item.distance} away", style = MaterialTheme.typography.subtitle2)
+                    Text(
+                        text = "${item.distance} away",
+                        style = MaterialTheme.typography.subtitle2
+                    )
                 }
                 Spacer(modifier = Modifier.height(2.dp))
 
@@ -97,9 +120,11 @@ fun Teachers(
                 Spacer(modifier = Modifier.height(7.dp))
 
                 Row(
-                    modifier = Modifier.width(148.dp),
+                    modifier = Modifier
+                        .width(148.dp)
+                        .padding(bottom = 10.dp),
                     horizontalArrangement = Arrangement.Center
-                    ) {
+                ) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_today),
                         contentDescription = "directions",
@@ -117,6 +142,7 @@ fun Teachers(
                 }
 
             }
+        }
 
         Box(
             modifier = Modifier
@@ -130,5 +156,5 @@ fun Teachers(
                 modifier = Modifier.fillMaxSize()
             )
         }
-        }
     }
+}

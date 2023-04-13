@@ -22,17 +22,15 @@ fun HomeData() {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
-            .fillMaxSize()
             .padding(top = 24.dp, start = 16.dp, bottom = 24.dp)
+            .fillMaxSize()
             .verticalScroll(state = scrollState)
     ) {
 
         LazyRow(
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
             modifier = Modifier
                 .padding(
                     start = 8.dp,
-                    end = 24.dp
                 )
         ) {
             items(getItems()) { item ->
@@ -49,7 +47,7 @@ fun HomeData() {
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
 
             items(getMilongas()) { item ->
                 Milongas(item)
@@ -62,7 +60,10 @@ fun HomeData() {
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        LazyRow(
+            horizontalArrangement = Arrangement.spacedBy(2.dp),
+            modifier = Modifier.fillMaxWidth()
+        ) {
 
             items(getTeachers()) { item ->
                 Teachers(item)
@@ -75,12 +76,13 @@ fun HomeData() {
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        LazyRow(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp)) {
 
             items(getEvents()) { item ->
                 Events(item)
             }
         }
+        Spacer(modifier = Modifier.height(15.dp))
 
 
     }
@@ -120,6 +122,13 @@ fun getTeachers() = listOf(
         "20 years",
         "15 Km",
         R.drawable.john
+    ), Teacher(
+        "La Rosa Milonga",
+        5.0,
+        100,
+        "20 years",
+        "15 Km",
+        R.drawable.clari
     )
 )
 
