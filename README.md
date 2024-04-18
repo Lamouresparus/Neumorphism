@@ -1,4 +1,4 @@
-# Pricepally Android Task
+# Neumorphism
 
 This repository contains a sample Android project's UI using Jetpack Compose.
 Jetpack Compose is a declarative modern toolkit for building native Android UIs
